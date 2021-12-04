@@ -23,6 +23,8 @@ public class MainView  implements Observer{
 		switch(mm.getScenenum()) {
 			case 1 : new LoginView(mm, (LoginModel)mm.getModel("LoginModel")); break;
 			case 2 : new MenuView(mm, (MenuModel)mm.getModel("MenuModel")); break;
+			case 3 : break;
+			case 4 : break;
 		}
 	}
 
