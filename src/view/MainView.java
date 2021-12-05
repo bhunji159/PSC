@@ -3,6 +3,9 @@ package view;
 import model.LoginModel;
 import model.MainModel;
 import model.MenuModel;
+import model.CatAlgorithmModel;
+import model.DogAlgorithmModel;
+import model.AlgorithmSelect;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -25,7 +28,7 @@ public class MainView  implements Observer{
 			case 2 : new MenuView(mm, (MenuModel)mm.getModel("MenuModel")); break;
 			case 3 : break;
 			case 4 : break;
-			case 5 : break;
+			case 5 : new WeightControllView(mm, (AlgorithmSelect)mm.getModel("WeightControlModel"));break;
 		}
 	}
 

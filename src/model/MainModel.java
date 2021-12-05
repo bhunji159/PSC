@@ -6,11 +6,13 @@ public class MainModel extends Observable{
 	private int sceneNum ;
 	private LoginModel lm = null;
 	private MenuModel mm = null;
+	private AlgorithmSelect as = null;
 	
 	public MainModel() {
 		this.sceneNum = 0;
 		lm = new LoginModel();
 		mm = new MenuModel();
+		as = new AlgorithmSelect();
 	}
 
 	
@@ -28,6 +30,7 @@ public class MainModel extends Observable{
 		switch(str) {
 			case "LoginModel" : return lm;
 			case "MenuModel" : return mm;
+			case "WeightControlModel" : return as;
 		}
 		System.out.println("Something is Wrong");
 		return null;
