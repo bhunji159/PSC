@@ -25,6 +25,7 @@ public class MainView  implements Observer{
 			case 2 : new MenuView(mm, (MenuModel)mm.getModel("MenuModel")); break;
 			case 3 : break;
 			case 4 : break;
+			case 5 : break;
 		}
 	}
 

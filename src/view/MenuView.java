@@ -24,7 +24,11 @@ public class MenuView implements Observer{
 		// TODO Auto-generated method stub
 		switch(MM.getNum()) {
 		case 1 : System.out.println("CheckFood"); mm.setSceneNum(3); break;
-		case 2 : System.out.println("WeightControll"); mm.setSceneNum(4);;
+		case 2 : System.out.println("GiveFood"); mm.setSceneNum(4); break;
+		case 3 : System.out.println("WeightControll"); mm.setSceneNum(5); break;
+		default : 	System.out.println("Wrong Choise!!!"); 
+					this.ShowMenu();
+					break;
 		}
 		
 	}
@@ -32,7 +36,8 @@ public class MenuView implements Observer{
 	public void ShowMenu() {
 		System.out.println("Choose Menu");
 		System.out.println("1. Check Food");
-		System.out.println("2. WeightControll");
+		System.out.println("2. GiveFood");
+		System.out.println("3. WeightControll");
 		Scanner scn = new Scanner(System.in);
 		MM.setNum(scn.nextInt()); 
 		scn.close();
