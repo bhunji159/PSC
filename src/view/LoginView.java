@@ -16,10 +16,12 @@ public class LoginView implements Observer {
 		System.out.println("Enter Your ID");
 		Scanner scn = new Scanner(System.in);
 		String str = scn.next();
+		System.out.println("Enter Your PassWord");
+		String pw = scn.next();
 		lm.addObserver(this);
 		this.lm = lm;
 		this.mm=mm;
-		lm.Login(str);
+		int result = lm.login(str, pw);
 		scn.close();
 	}
 
@@ -29,7 +31,9 @@ public class LoginView implements Observer {
 			System.out.println("Login Complete");
 			mm.setSceneNum(2);
 		}
-		else System.out.println("Login Failed");
+		else
+			System.out.println("Login Failed");
+            mm.setSceneNum(1);
 	}
 	
 	
