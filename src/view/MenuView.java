@@ -26,7 +26,7 @@ public class MenuView implements Observer{
 		case 1 : System.out.println("CheckFood"); mm.setSceneNum(3); break;
 		case 2 : System.out.println("GiveFood"); mm.setSceneNum(4); break;
 		case 3 : System.out.println("WeightControll"); mm.setSceneNum(5); break;
-		default : 	System.out.println("Wrong Choise!!!"); 
+		default : 	System.out.println("Wrong Choice!!!"); 
 					this.ShowMenu();
 					break;
 		}

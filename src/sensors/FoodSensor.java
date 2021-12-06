@@ -1,6 +1,8 @@
 package sensors;
 
-public class FoodSensor {
+import java.util.Observable;
+
+public class FoodSensor{
 	private double beforeeat;  //g
 	private double aftereat;  //g
 	
@@ -16,6 +18,4 @@ public class FoodSensor {
 	public void setAftereat(double aftereat) {
 		this.aftereat = aftereat;
 	}
-	
-
 }

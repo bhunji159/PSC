@@ -12,6 +12,24 @@ public class CheckFoodModel extends Observable{
 	private ArrayList<FoodNode> dayhistory = new ArrayList<FoodNode>();
 	private ArrayList<ArrayList<FoodNode>> history = new ArrayList<>();
 	private boolean eating;
+	private String date;
+	private SimpleDateFormat format1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	{
+		for(int i=0;i<10;i++) {
+			Date time = new Date();
+			date = format1.format(time);
+			FoodNode node=new FoodNode(date, i*10);
+			dayhistory.add(node);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 	public void recordNew(String date, double eatenfood) {
 		FoodNode temp = new FoodNode(date, eatenfood);
@@ -31,6 +49,16 @@ public class CheckFoodModel extends Observable{
 		return str;
 	}
 	
+//	public String getHistory() {
+//		String str = "";
+//		Iterator it1 = dayhistory.iterator();
+//		Iterator it2 = history.iterator().next().x
+//		while(it.hasNext()) {
+//			str += it.next().toString();
+//		}
+//		return str;
+//	}
+	
 	public boolean isEating() {
 		return eating;
 	}
@@ -38,7 +66,7 @@ public class CheckFoodModel extends Observable{
 	public class FoodNode{  //먹은 양
 		private String date;
 		private FoodSensor foodsensor;
-		private static SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		private SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		private double eatenfood;
 		
 		public FoodNode(String date, double eatenfood) {
@@ -79,6 +107,4 @@ public class CheckFoodModel extends Observable{
 		}
 		
 	}
-	
-	
 }

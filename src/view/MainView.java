@@ -1,5 +1,6 @@
 package view;
 
+import model.CheckFoodModel;
 import model.LoginModel;
 import model.MainModel;
 import model.MenuModel;
@@ -23,7 +24,7 @@ public class MainView  implements Observer{
 		switch(mm.getScenenum()) {
 			case 1 : new LoginView(mm, (LoginModel)mm.getModel("LoginModel")); break;
 			case 2 : new MenuView(mm, (MenuModel)mm.getModel("MenuModel")); break;
-			case 3 : break;
+			case 3 : new CheckFoodView(mm,(CheckFoodModel)mm.getModel("CheckFoodModel")); break;
 			case 4 : break;
 			case 5 : break;
 		}
