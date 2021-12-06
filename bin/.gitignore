@@ -1,4 +1,6 @@
-/controller/
 /model/
-/psc/
+/bin/
+/sensor/
+/FoodSensor/
+/sensors/
 /view/
