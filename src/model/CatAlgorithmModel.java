@@ -87,8 +87,5 @@ public class CatAlgorithmModel implements WeightControlAlgorithm {
 		public double getFoodAmount() {
 			// TODO Auto-generated method stub
 		  return this.recommended;
-		}
-		
-        
-	     
+		}	     
 }

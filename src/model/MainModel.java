@@ -7,12 +7,16 @@ public class MainModel extends Observable{
 	private LoginModel lm = null;
 	private MenuModel mm = null;
 	private AlgorithmSelect as = null;
+	private CheckFoodModel fm = null;
+	private GiveFoodModel gm = null;
 	
 	public MainModel() {
 		this.sceneNum = 0;
 		lm = new LoginModel();
 		mm = new MenuModel();
 		as = new AlgorithmSelect();
+		fm = new CheckFoodModel();
+		gm = new GiveFoodModel();
 	}
 
 	
@@ -31,6 +35,8 @@ public class MainModel extends Observable{
 			case "LoginModel" : return lm;
 			case "MenuModel" : return mm;
 			case "WeightControlModel" : return as;
+			case "CheckFoodModel" : return fm;
+			case "GiveFoodModel" : return gm;
 		}
 		System.out.println("Something is Wrong");
 		return null;

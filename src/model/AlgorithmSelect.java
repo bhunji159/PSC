@@ -29,7 +29,6 @@ public class AlgorithmSelect extends Observable {
    }
    public boolean getisValid() {
 	   return isValid;
-   }
-   
-   
+   }      
 }
+

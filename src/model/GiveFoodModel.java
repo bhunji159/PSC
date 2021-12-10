@@ -1,55 +1,53 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Observable;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.Queue;
+import java.util.Scanner;
 
-public class GiveFoodModel extends Observable {
+public class GiveFoodModel extends Observable{
+	private Deque<Integer> time = new LinkedList<>();
 	private boolean isValid = false;
-	private int foodamount, foodtime;
-	private int i,j,k;
-	Timer f_timer = new Timer();
 	
-	public void givefood(int i, int j, int k) {
-		this.i = i;
-		this.j = j;
-		this.k = k;
+	public int addTime(int n) {	
+	    Iterator it = time.iterator();	
+	    if(!it.hasNext()) {
+	    	time.add(n);
+	    }
+	    else {
+	    while(it.hasNext()){
+	        if((int)it.next() == n) {
+	            return -1;
+	        }
+	    }
+	    time.add(n);
+	    }
+	
+	    isValid = true;
+	    setChanged();
+	    notifyObservers();
+	    return 0; 
 	}
 	
-    if(i==1) {
-    	setFoodAmount(100);
-    	TimerTask f_task = new TimerTask() {
-    	public void run() {
-    		Fooddrop();
-    	}
-    	};
-    	
-    	f_timer.schedule(f_task,0);
-    	
-    else if(i==2) {
-    	  setFoodAmount(j);
-    	  setFoodTime(k);
-    	}
-    isValid = true;
-    setChanged();
-	notifyObservers();
-    
-    public void setFoodAmount(int f) {
-    	this.foodamount = f;
-    }
-    
-    public void setFoodTime(int num) {
-    	this.foodtime = num;
-    }
-    
-    public int Fooddrop() {
-    	return this.foodamount;
-    }
-    
-    public boolean getIsValid() {
-		return isValid;
+	public void resetTime() {
+		time = new LinkedList<Integer>();		
 	}
-    
-    
-    }
-    	
+	
+	public void delTime() {
+		time.removeLast();
+	}
+		
+	
+	public Deque<Integer> getTime() {
+		return this.time;		
+	}
+	
+	public boolean getisValid() {
+	 	   return isValid;
+	    } 
+	
+
+}

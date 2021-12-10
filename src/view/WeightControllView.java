@@ -1,6 +1,7 @@
 package view;
 
 import java.util.Observable;
+
 import java.util.Observer;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ import model.MainModel;
 
 public class WeightControllView implements Observer{
 	private AlgorithmSelect as = null;
-	private MainModel mm =null; 
+	private MainModel mm = null; 
 	
 	public WeightControllView(MainModel mm, AlgorithmSelect as) {
 		System.out.println("1. 강아지 2. 고양이 : ");
